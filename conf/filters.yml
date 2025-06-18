@@ -1,0 +1,12 @@
+pipeline:
+  filters:
+    - name:         parser
+      match:        "*"
+      parser:       json
+      key_name:     log
+      reserve_data: true
+
+    - name:         lua
+      match:       "*"
+      script:       ecs_metadata.lua
+      call:         ecs_metadata

@@ -1,0 +1,4 @@
+pipeline:
+  inputs:
+    - name:      forward
+      unix_path: /var/run/fluent.sock

@@ -1,0 +1,15 @@
+service:
+  flush:                  1
+  grace:                  30
+  parsers_file:           /fluent-bit/etc/parsers.conf
+  log_level:              ${FLB_LOG_LEVEL}
+
+  # self-exposed metrics and healthcheck
+  # https://docs.fluentbit.io/manual/administration/monitoring#health-check-for-fluent-bit
+  http_server:            true
+  http_listen:            0.0.0.0
+  http_port:              2020
+  health_check:           true
+  hc_errors_count:        5
+  hc_retry_failure_count: 5
+  hc_period:              5
